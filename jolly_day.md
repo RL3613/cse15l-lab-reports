@@ -4,8 +4,8 @@
 
 ALL DAY JOLLY DAY
 
-*kevalaikkelam holiday*
+*kavalaikkellaam holiday*
 
-**college valkaayil**
+**college vaalkaiyil**
 
-endhrum holiday
+endrum holiday
