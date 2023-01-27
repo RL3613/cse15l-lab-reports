@@ -55,7 +55,7 @@ The `main` method in StringServer is called, which calls the `start` method in S
 
 So `HandleRequest` is called, and the URI parameter is our URL `localhost:4000/add-message?s=Hello!`.
 
-`getQuery` is called, which outputs the part after the `/`. Splitting the query by `=`, we get that `parameter[0]` is `"s"` and `parameter[1]` is `"Hello!"`.
+`getQuery` is called, which outputs the part of the URL after the `/`. Splitting the query by `=`, we get that `parameter[0]` is `"s"` and `parameter[1]` is `"Hello!"`.
 
 Variable `display` is `null` before the method. After the method is executed, variable `toAdd` is initiated to `parameter[1]`, and `display` is concatenated with `toAdd` to become `"Hello!"`.
 
@@ -65,7 +65,7 @@ In this screenshot, we add "What's up?" to our message.
 
 The `HandleRequest` method is again called, and the URI parameter is `http://localhost:4000/add-message?s=What%27s%20up?`.
 
-`getQuery` is called, which outputs the part after the `/`. Splitting the query by `=`, we get that `parameter[0]` is `"s"` and `parameter[1]` is `"What's up?"`.
+`getQuery` is called, which outputs the part after of the URL the `/`. Splitting the query by `=`, we get that `parameter[0]` is `"s"` and `parameter[1]` is `"What's up?"`.
 
 Variable `display` is `"Hello!"` before the method. After the method is executed, variable `toAdd` is set to `"\n" + parameter[1]` and `display` is concatenated with `toAdd` to become `"Hello!\nWhat's up?"`.
 
