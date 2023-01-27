@@ -48,7 +48,7 @@ with your username replacing USERNAME. Then, when prompted, type "yes" and fill 
 
 You should see a long message containing notice and system information when you successfully log in, like so:
 
-![image](https://user-images.githubusercontent.com/110417529/215012277-11803b16-85c4-4835-8b92-1fad4d6f2dcf.png)
+![image](https://user-images.githubusercontent.com/110417529/215013654-638abb48-8263-461d-9553-795e06e6ab88.png)
 
 ## Step 5: Trying Commands
 
