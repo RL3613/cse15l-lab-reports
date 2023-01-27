@@ -51,15 +51,23 @@ class StringServer {
 ![image](https://user-images.githubusercontent.com/110417529/214984221-b5178a13-bcf2-4152-b0b6-a31b9265e519.png)
 In this screenshot, we added "Hello!" to our message.
 
-The main request in StringServer is called, which calls the start method in Server. Server then calls HandleRequest.
+The `main` method in StringServer is called, which calls the `start` method in Server. Server then calls `HandleRequest`.
 
-So HandleRequest is called, and the URI parameter is our URL `localhost:4000/add-message?s=Hello!`. Variable `display` is `null` before the method. After the method is executed, variable `toAdd` is initiated to `"Hello"`, and `display` is concatenated with `toAdd` to become `"Hello!"`.
+So `HandleRequest` is called, and the URI parameter is our URL `localhost:4000/add-message?s=Hello!`.
+
+`getQuery` is called, which outputs the part after the `/`. Splitting the query by `=`, we get that `parameter[0]` is `"s"` and `parameter[1]` is `"Hello!"`.
+
+Variable `display` is `null` before the method. After the method is executed, variable `toAdd` is initiated to `parameter[1]`, and `display` is concatenated with `toAdd` to become `"Hello!"`.
 
 ### Second Screenshot
 ![image](https://user-images.githubusercontent.com/110417529/214987127-4c4b115e-3c00-482f-b46f-813cc05a0ac1.png)
 In this screenshot, we add "What's up?" to our message.
 
-The HandleRequest message is again called, and the URI parameter is `http://localhost:4000/add-message?s=What%27s%20up?`. Variable `display` is `"Hello!"` before the method. After the method is executed, variable `toAdd` is set to `"\nWhat's up?"` and `display` is concatenated with `toAdd` to become `"Hello!\nWhat's up?"`.
+The `HandleRequest` method is again called, and the URI parameter is `http://localhost:4000/add-message?s=What%27s%20up?`.
+
+`getQuery` is called, which outputs the part after the `/`. Splitting the query by `=`, we get that `parameter[0]` is `"s"` and `parameter[1]` is `"What's up?"`.
+
+Variable `display` is `"Hello!"` before the method. After the method is executed, variable `toAdd` is set to `"\n" + parameter[1]` and `display` is concatenated with `toAdd` to become `"Hello!\nWhat's up?"`.
 
 # Part 2: Buggy Code
 The reverseInPlace method is buggy.
