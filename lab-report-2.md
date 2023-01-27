@@ -2,7 +2,7 @@
 ## Code
 ### Handler Class
 
-````
+```java
 class Handler implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
     // various requests.
@@ -30,9 +30,9 @@ class Handler implements URLHandler {
         }
     }
 }
-````
+```
 ### StringServer class
-````
+```java
 class StringServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
@@ -45,7 +45,7 @@ class StringServer {
         Server.start(port, new Handler());
     }
 }
-````
+```
 ## Screenshots
 ### First Screenshot
 ![image](https://user-images.githubusercontent.com/110417529/214984221-b5178a13-bcf2-4152-b0b6-a31b9265e519.png)
@@ -65,44 +65,44 @@ The HandleRequest message is again called, and the URI parameter is `http://loca
 The reverseInPlace method is buggy.
 ## Buggy Testcase
 The following test breaks it:
-````
+```java
   @Test
   public void testReverseInPlace() {
     int[] input1 = {1,2,3,4};
     ArrayExamples.reverseInPlace(input1);
     assertArrayEquals(new int[]{4,3,2,1}, input1);
   }
-````
+```
 It produces the following result:
 ![image](https://user-images.githubusercontent.com/110417529/214993872-01fdb9b4-6fb8-4cfc-b837-197fde3c1c84.png)
 
 ## Nonbuggy Testcase
 The following test does not detect the bug:
-````
+```java
   @Test
   public void testReverseInPlace() {
     int[] input1 = {2};
     ArrayExamples.reverseInPlace(input1);
     assertArrayEquals(new int[]{2}, input1);
   }
-````
+```
 It produces the following result:
 ![image](https://user-images.githubusercontent.com/110417529/214993275-0c9e30d2-c91c-45f5-b1b0-675e460fa60e.png)
 
 ## Buggy Code
-````
+```java
   static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
     }
   }
-  ````
+```
   
   The problem with this code is that it mirrors the array rather than reverse it.
   For example, on the input `[1, 2, 3, 4]`, after the first two iterations, it becomes `[4, 3, 3, 4]`. Then on the last two iterations, it replaces 3 with itself and 4 with itself, as it does not save `1` and `2` after replacing them.
   
   ## Fixed Code
-  ````
+  ```java
     static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length/2; i += 1) {
       int temp = arr[i];
@@ -110,7 +110,7 @@ It produces the following result:
       arr[arr.length - i - 1] = temp;
     }
   }
-  ````
+  ```
   The fix addresses the issue because it stores the old values of the first half in `temp` and replaces the corresponding second half with `temp`. It only needs to go up to `arr.length/2` as it replaces two elements at a time, so it does not need to look through the whole array to alter every value.
   
   # Part 3: Something New
