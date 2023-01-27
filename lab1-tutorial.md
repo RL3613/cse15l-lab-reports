@@ -2,17 +2,18 @@
 
 ## Step 1: VSCode
 
-VSCode is an IDE which we will use in CSE15L.
+VSCode is the IDE which we will use in CSE15L. IDE's let you write, run, and debug code.
 
-If VSCode is not your preferred IDE then too bad.
+Go to [VSCode](https://code.visualstudio.com/Download) and download VSCode if you do not have it already. Select the appropriate version for your operating system and click the blue download button as seen in the image below.
 
-Go to [VSCode](https://code.visualstudio.com/Download) and download VSCode if you do not have it already.
+![image](https://user-images.githubusercontent.com/110417529/215011739-127146b5-900e-475e-9cae-1afd1eb951a6.png)
+
 
 ## Step 2: Git
 
 Git is a version control system, meaning it's a system that saves different versions of a file. It's sort of like Google Drive without the UI, so you have to use commands to do everything.
 
-Go to [git](https://git-scm.com/downloads) to download git.
+Go to [git](https://git-scm.com/downloads) to download git; click the appropriate version for your operating system.
 
 On VSCode, go to terminal dropdown at the top left and select new terminal.
 
@@ -20,6 +21,8 @@ This will open a new terminal at the bottom.
 
 ![image](https://user-images.githubusercontent.com/110417529/212207867-ac84d3b5-c66c-46b9-a363-d0f66011c156.png)
 (note this image does not have terminal open)
+
+Note: If you want a UI for git, you can download [Github Desktop](https://desktop.github.com/).
 
 ## Step 3: Getting CSE15L accounts
 
@@ -35,21 +38,27 @@ Click the "change password" button and submit a global password change. Select n
 
 In CSE15L, you will need to run code on other computers. Perhaps those computers have software which yours does not. For this purpose, we will connect to a remote server through VSCode.
 
-Open a new terminal and type "`ssh cse15lwi23USERNAME@ieng6.ucsd.edu`" with your username replacing USERNAME. Then, when prompted, type "yes" and fill in your password. Note that your password will not appear in text as you type it in for security.
+Open a new terminal and type 
+```console
+ssh cse15lwi23USERNAME@ieng6.ucsd.edu
+```
+with your username replacing USERNAME. Then, when prompted, type "yes" and fill in your password. Note that your password will not appear in text as you type it in for security.
 
 ![image](https://user-images.githubusercontent.com/110417529/212208170-ffdc4a7d-400c-4cec-91a1-8374073c9100.png)
 
-You should see a long message containing notice and system information when you successfully log in.
+You should see a long message containing notice and system information when you successfully log in, like so:
+
+![image](https://user-images.githubusercontent.com/110417529/215012277-11803b16-85c4-4835-8b92-1fad4d6f2dcf.png)
 
 ## Step 5: Trying Commands
 
 Try a few commands after connecting to test that it works!
 
 You can try:
-- `cd`
-- `pwd`
-- `mkdir`
-- `ls -lat`
-- `ls -a`
+- `cd` : this changes the directory the computer is in (which files the computer currently can access and run).
+- `pwd` : this tells you the current directory
+- `mkdir` : this creates a new directory, which is like a folder you can add files to
+- `ls` : this lists the files under the current directory which you can change directory (`cd`) into
+- `ls -a` : this lists all the files under the current directory, even the hidden ones which begin with `.`
 
 ![image](https://user-images.githubusercontent.com/110417529/212210105-95717ba5-ee39-4bc3-ba07-67337dbb6b88.png)
