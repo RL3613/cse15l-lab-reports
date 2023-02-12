@@ -14,12 +14,7 @@ class Handler implements URLHandler {
         } else if (url.getPath().equals("/add-message")) {
             String[] parameters = url.getQuery().split("=");
             if(parameters[0].equals("s") && parameters.length > 1) {
-                String toAdd;
-                if(display.equals("")) {
-                    toAdd = parameters[1];
-                } else {
-                    toAdd = "\n" + parameters[1];
-                }
+                String toAdd = parameters[1] + "\n";
                 display = display.concat(toAdd);
                 return display;
             } else {
@@ -81,6 +76,8 @@ The following test breaks it:
     assertArrayEquals(new int[]{4,3,2,1}, input1);
   }
 ```
+**Note**: This is a code block and not a screenshot (got marked off for that). I will submit both the markdown and the pdf on the resubmission.
+
 It produces the following result:
 ![image](https://user-images.githubusercontent.com/110417529/214993872-01fdb9b4-6fb8-4cfc-b837-197fde3c1c84.png)
 
@@ -106,13 +103,13 @@ It produces the following result:
   }
 ```
   
-  The problem with this code is that it mirrors the array rather than reverse it.
-  For example, on the input `[1, 2, 3, 4]`, after the first two iterations, it becomes `[4, 3, 3, 4]`. Then on the last two iterations, it replaces 3 with itself and 4 with itself, as it does not save `1` and `2` after replacing them.
+The problem with this code is that it mirrors the array rather than reverse it.
+For example, on the input `[1, 2, 3, 4]`, after the first two iterations, it becomes `[4, 3, 3, 4]`. Then on the last two iterations, it replaces 3 with itself and 4 with itself, as it does not save `1` and `2` after replacing them.
   
   ### Fixed Code
   
   ```java
-    static void reverseInPlace(int[] arr) {
+  static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length/2; i += 1) {
       int temp = arr[i];
       arr[i] = arr[arr.length - i - 1];
@@ -120,6 +117,7 @@ It produces the following result:
     }
   }
   ```
+  
   The fix addresses the issue because it stores the old values of the first half in `temp` and replaces the corresponding second half with `temp`. It only needs to go up to `arr.length/2` as it replaces two elements at a time, so it does not need to look through the whole array to alter every value.
   
   ## Part 3: Something New
