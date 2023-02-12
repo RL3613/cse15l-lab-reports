@@ -107,6 +107,7 @@ The problem with this code is that it mirrors the array rather than reverse it.
 For example, on the input `[1, 2, 3, 4]`, after the first two iterations, it becomes `[4, 3, 3, 4]`. Then on the last two iterations, it replaces 3 with itself and 4 with itself, as it does not save `1` and `2` after replacing them.
   
 ### Fixed Code
+**Note**: I don't know why the header is not rendering in Github Pages. It renders perfectly in the preview and I am using three #'s to denote header like every other header in this report. The markdown file is attached in the submission. I have emailed Dr. Politz regarding this issue.
   
 ```java
   static void reverseInPlace(int[] arr) {
