@@ -76,7 +76,7 @@ The following test breaks it:
     assertArrayEquals(new int[]{4,3,2,1}, input1);
   }
 ```
-**Note**: This is a code block and not a screenshot (got marked off for that). I will submit both the markdown and the pdf on the resubmission.
+**Note**: This is a code block and not a screenshot (got marked off for that). I use dark mode, as seen in screenshots below.
 
 It produces the following result:
 ![image](https://user-images.githubusercontent.com/110417529/214993872-01fdb9b4-6fb8-4cfc-b837-197fde3c1c84.png)
