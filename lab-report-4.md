@@ -1,4 +1,4 @@
-# Lab Report 7
+# Lab Report 4
 In this lab report, we will demonstrate how to clone, edit, and commit a file.
 
 ## Step 4
